@@ -1,6 +1,49 @@
-<HTML>
- <body>
-  <h1> Archpower Wii Performance tips</h1>
-  <p>I use arch btw, on my wii. /n as i've spent countless hours/n test test 123</p>
-   </body>
-</HTML>
+<!DOCTYPE html>
+    <head>
+       <title>ArchPOWER Wii performance tips</title>
+        </head>
+        <body>
+            <h1 align="center">ArchPOWER Wii performance tips</h1>
+            
+            <img src="dillo.png" align="center" alt="">
+            <p>I Use arch (on my wii) btw.<br>as an user of <a href="https://wii-linux.org">Wii Linux</a>, i've tried countless performance tips while also keeping a graphic enviroment, and i found some optimal settings for it too.<br>
+             </p>
+             <h2>What's archPOWER First of all?</h2>
+             <p> <a href="https://archlinuxpower.org/">Arch POWER</a> is a port of the <a href="https://archlinux.org">Arch Linux</a> distribution to 64 Bit PowerPC Machines and select RISC-V Machines. <br>y`know, the distro everyone glazes...<br> jokes aside, the wii got this port thanks to the work of Techflash to the <b>32-Bit Big Endian PowerPC Architecture (or just ppc32)</b>, including the 4.15 Kernel and is able to port other things, like requested apps (as long as they compile properly) from the <a href="https://aur.archlinux.org">AUR</a>, the package manager and such, which is how i got most packages which are lightweight and minimal enough to run good on an almost driverless (at the moment, please write some drivers for the hollywood) enviroment.<br>no, i won`t give you a guide for installing it. <br> <a href="https://wiki.wii-linux.org/wiki/Installation_Guide">for the love of GOD, read the wiki for it.</a>  </p>
+             <h2>Optimization tips</h2>
+             <p>To the main topic of this small site, i will first provide you some <b>commands to optimize RAM Usage, and adding swap space and such</b>, then we will go to optimizing it also using a graphical interface. <br><b><i>notice: it will still be slow because there is no proper drivers for it yet and instead relies on software rendering.</i></b><br><a href="script.sh">Download this script on your Wii.</a> it will disable this tweaks: 
+             <li>
+                 Change the file /etc/systemd/journald.conf to use 500K for logging, saves <b> 5 MB</b> of RAM.
+                 
+             </li><br>
+             <li>
+                Disables the service userdbd. not needed and uses Some CPU.
+             </li><br>
+             <li>
+             Disables at-spi-dbus-bus, it's accessibility features you don't need at all. sucks up <b> 10 MB </b> When enabled.
+             </li><br>
+             <li>
+                 Writes GTK_ALLY=none to the .xinitrc file.
+               
+             </li><br>
+             <li>
+                 Will create a 512 MB Swap file, add the permissions, make a swap file and add the lines to /etc/fstab to auto mount it at boot.
+          
+             </li><br>
+             
+             <li>
+                 will fix an issue with the extra repository as it's been changed.
+             </li><br>
+after you executed the script, it will automatically reboot your wii.<br>now that you've done the essential tweaks, type configmii on the terminal after logging in, go to archPOWER settings and run a system update. if it fails, restart it again until it downloads everything. <br> after that, <a href="installxserver.sh">Download this script too.</a> it will install the base packages to execute the X Server. <br> 
+             </p>
+             <h2>Package suggestions</h2>
+             <p>Finally, what do i suggest using to having it look pretty much modern and also lean on RAM / CPU usage? <br>
+<p> if you use tiling window managers, <b> Use i3 or dwm.</b> if you use stacking window managers, use <b> xorg-twm</b>, <b>jwm</b> or <b>tinywm</b> if you really want it very lean on usage. i suggest using jwm for this as it's the best choice if you want a stable and customizable Window manager. it also comes with a panel, so no need to install extra elements for it.<br> for the rest, you can use: <br><br> <b>File managers</b>: Midnight commander<br> <b>Web Browser</b>: dillo, w3m, elinks 
+<br> <b>Text editor</b>: nano, vim <br>
+<b>Terminal</b>: Suckless Terminal (st) or xterm<br>
+<b>viewing images</b>: feh<br>
+    </p>
+
+
+        </body>
+    </html>
