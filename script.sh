@@ -22,5 +22,8 @@ Server = https://repo.wii-linux.org/arch/extra/any
 Server = https://repo.wii-linux.org/arch/extra/\$arch
 EOF
 
-echo "Done! exiting..."
+echo "Adding swap file"
+fallocate -l 512M /swap
+chmod 600 /swap
+
 reboot
