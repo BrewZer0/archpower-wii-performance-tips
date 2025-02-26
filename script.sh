@@ -25,5 +25,7 @@ EOF
 echo "Adding swap file"
 fallocate -l 512M /swap
 chmod 600 /swap
-
+mkswap /swap
+swapon /swap
+echo "/swap swap"
 reboot
