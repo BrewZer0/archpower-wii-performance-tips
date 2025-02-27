@@ -1,0 +1,41 @@
+<JWM>
+    <Background type="tile">file://~/wp.png</Background>
+    <WindowStyle>
+        <Font>DejaVu Sans-9</Font>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#27272F</Background>
+        <Opacity>1.0</Opacity>
+        <BorderWidth>0</BorderWidth>
+        <Corner>0</Corner>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#27272F</Background>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+    <Tray autohide="false" height="24" halign="center">
+        <TrayButton>
+            <Image>~/.config/a/menu.png</Image>
+            <Execute>jwm -root:1</Execute>
+        </TrayButton>
+        <TaskList>
+            <Width>24</Width>  <!-- No text, only icons -->
+        </TaskList>
+        <Clock format="%H:%M:%S"> 
+            <Font>DejaVu Sans-7</Font>
+        </Clock>
+    </Tray>
+    <Fonts>
+        <Default>DejaVu Sans-7</Default>
+        <Menu>DejaVu Sans-7</Menu>
+        <Title>DejaVu Sans-7</Title>
+        <Tray>DejaVu Sans-7</Tray>
+    </Fonts>
+    <StartupCommand>feh --bg-scale ~/wp.png</StartupCommand>
+    <RootMenu height="50">
+        <Program label="Terminal">st</Program>
+        <Program label="File Manager">st -e mc</Program>
+        <Program label="Web Browser">links2 -g</Program>
+        <Exit label="Exit" confirm="true"/>
+    </RootMenu>
+</JWM>
